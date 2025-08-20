@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<title>D Store | Página Inicial</title>
+</head>
+<body>
+	
+	<div class="logo">
+		<h1  class="branco"> 
+			D <span class="amarelo">
+				STORE
+			</span>
+		</h1>
+	</div>
+	<div id="barradepesquisa" action="#">
+		<input type="text" placeholder="Pesquise produtos ">
+		<button type="submit">🔍</button>
+			</div>
+	<div id="carrinho">
+		<h1>🛒</h1>
+    <h2> Carrinho</h2>
+    <ul id="itens"></ul>
+    <p id="total">Total: R$ 0</p>
+  	</div>
+
+	  <script>
+	    let total = 0;
+    const itensCarrinho = [];
+
+    function adicionarCarrinho(nome, preco) {
+      itensCarrinho.push({ nome, preco });
+      total += preco;
+      atualizarCarrinho();
+    }
+
+    function removerCarrinho(index) {
+      total -= itensCarrinho[index].preco;
+      itensCarrinho.splice(index, 1);
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+      const lista = document.getElementById('itens');
+      lista.innerHTML = "";
+      itensCarrinho.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `${item.nome} - R$ ${item.preco} 
+          <button class="remover" onclick="removerCarrinho(${index})">❌</button>`;
+        lista.appendChild(li);
+      });
+      document.getElementById('total').textContent = "Total: R$ " + total;
+    }
+	  </script>
+	<div id="menu">
+		<a href="index.html">INÍCIO</a>
+		<a href="produtos.html">PRODUTOS</a>
+		<a href="cadastro.html">CADASTRO</a>
+	</div><br>
+	<div id="container">
+		<h1>PRINCIPAIS ESCOLHAS:</h1>
+		<div class="produto-card" id="produto">
+			<img src="imagens/notebook.jpg">
+			<p>Notebook bom e barato, em ótimo estado! ULTIMAS UNIDADES</p>
+			<p class="preco"> R$800,00</p>
+			<p class="produto">NOTEBOOK</p>
+			<button onclick="adicionarCarrinho('NOTEBOOK', 800)">Adicionar</button>
+		</div>
+		
+		<div class="produto-card" id="produto" >
+			<img src="imagens/fones.jpg">
+			<p>Headset bom e barato, em ótimo estado! ULTIMAS UNIDADES</p>
+			<p class="preco"> R$200,00</p>
+			<p class="produto">HEADSET</p>
+			<button onclick="adicionarCarrinho('HEADSET', 200)">Adicionar</button>
+		</div>
+	
+		<div class="produto-card" id="produto" >
+			<img src="imagens/fone.jpg">
+			<p>FONE COM FIO bom e barato, em ótimo estado! ULTIMAS UNIDADES</p>
+			<p class="preco"> R$50,00</p>
+			<p class="produto">FONE COM FIO</p>
+			<button onclick="adicionarCarrinho('FONE ', 50)">Adicionar</button>
+		</div>
+
+		<div class="produto-card" id="produto" >			
+			<img src="imagens/tablet.jpg">
+			<p>TABLET bom e barato, em ótimo estado! ULTIMAS UNIDADES</p>
+			<p class="preco"> R$1200,00</p>
+			<p class="produto">TABLET</p>
+			<button onclick="adicionarCarrinho('TABLET', 1200)">Adicionar</button>
+		</div>
+
+	</div><br>
+	
+	<footer> 
+		<p>Todos os Direitos Reservados.</p>
+	</footer>
+	
+
+  
+
+
+		
+	
+
+</body>
+</html>

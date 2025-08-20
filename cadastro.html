@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<title>D Store | Cadastro</title>
+</head>
+<body>
+	
+	<div class="logo">
+		<h1  class="branco"> D <span class="amarelo">STORE</span></h1>
+	</div>
+	<div id="barradepesquisa" action="#">
+		<input type="text" placeholder="Pesquise produtos ">
+		<button type="submit">🔍</button>
+			</div>
+	
+	<div id="menu">
+		<a href="index.html">INÍCIO</a>
+		<a href="produtos.html">PRODUTOS</a>
+		<a href="cadastro.html">CADASTRO</a>
+	</div><br>
+	<div id="container">
+		<form>
+		<fieldset> 
+			<legend>CADASTRE-SE</legend>
+			<div>
+				<img src="imagens/icone-usuario.png">
+				<p> EMAIL:</p>
+				<input type="email" name="email" class="email" placeholder="Digite seu email:" required autofocus>
+			</div><br>
+			<div>
+				<img src="imagens/icone-cadeado.png">
+				<p>SENHA:</p>
+				<input class="senha" type="password" name="Senha" id="senha" placeholder="Digite sua senha" required>
+			</div><br>
+			<div>
+				<img src="imagens/icone-cadeado.png">
+				<p> CONFIRMAR SENHA:</p>
+				<input class="senha" type="password" name="Senha" id="senha" placeholder="Digite sua senha novamente" required>
+			</div><br>
+			<div><br>
+				<p>NOME COMPLETO:</p>
+				<input type="text" name="NOME" placeholder="Digite seu nome completo:" required>
+			</div><br>
+			<div>
+				<p>ENDEREÇO:</p>
+				<input type="text" name="ENDEREÇO" placeholder="Digite seu endereço:" required>
+			</div><br>
+			<div class="enviar">
+				<input type="submit" value="CADASTRE-SE" >
+				<p id="mensagem" style="display:none; color: yellow; font-weight:bold; text-align:center; margin-top:10px;">
+  ✅ Cadastro concluído com sucesso!
+</p>
+
+<script>
+  const form = document.querySelector("form");
+  const msg = document.getElementById("mensagem");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    msg.style.display = "block"; // mostra a mensagem
+  });
+</script>
+
+			</div>
+		</fieldset>
+	</form>
+</div>
+<br>
+	<footer> 
+		<p>Todos os Direitos Reservados.</p>
+		</footer>
+		
+	
+
+  
+
+
+		
+	
+
+</body>
+</html>
